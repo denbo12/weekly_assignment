@@ -1,0 +1,31 @@
+function diffCheck(array1, array2) {
+	const result = [];
+	
+	for (i= 0; i < array1.length; i++) {
+		let value = array1[i];
+		if(array2.includes(value)){
+			continue;
+		}else{
+			result.push(value);
+		};
+	};
+
+	for(i= 0; i < array2.length; i++) {
+		let value = array2[i];
+		if(array1.includes(value)){
+			continue;
+		}else{
+			result.push(value);
+		};
+	};
+	
+	console.log(result);
+};
+
+const set1 = ["grass", "dirt","pink wool", "dead shrub"];
+const set2 = ["grass", "dirt", "dead shrub"];
+diffCheck(set1, set2);
+
+const numSet1 = [1,2,3,5];
+const numSet2 = [1,2,3,4,5];
+diffCheck(numSet1, numSet2);
